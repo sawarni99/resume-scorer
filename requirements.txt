@@ -1,0 +1,13 @@
+transformers
+datasets
+torch
+wandb
+huggingface_hub
+ipywidgets
+bitsandbytes
+peft
+dotenv
+pydantic
+pymupdf
+tqdm
+matplotlib
