@@ -11,3 +11,4 @@ pydantic
 pymupdf
 tqdm
 matplotlib
+scikit-learn

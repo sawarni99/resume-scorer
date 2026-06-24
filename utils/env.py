@@ -1,10 +1,9 @@
 from dotenv import load_dotenv
 import os
-from pydantic import BaseModel, ConfigDict
 from typing import List, Dict
+from datatypes.env_type import EnvType
 
-class EnvProp(BaseModel):
-    model_config = ConfigDict(extra="allow")
+
 
 class Env():
 
@@ -13,7 +12,7 @@ class Env():
         
         env_keys:List[str] = [key for key, _ in os.environ.items()]
         env_dict:Dict = {key: os.getenv(key) for key in env_keys}
-        self.env = EnvProp(**env_dict)
+        self.env = EnvType(**env_dict)
 
-    def get_env(self) -> EnvProp:
+    def get_env(self) -> EnvType:
         return self.env
