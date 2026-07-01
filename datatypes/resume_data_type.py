@@ -33,7 +33,7 @@ class Certification(BaseModel):
 
 
 class Resume(BaseModel):
-    contact_info: ContactInfo
+    # contact_info: ContactInfo
     description: Optional[str] = None
     education: List[Education] = []
     skills: List[str] = []

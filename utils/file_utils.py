@@ -1,8 +1,7 @@
 import fitz
-from pydantic import BaseModel
 import re
 
-class FileUtil(BaseModel):
+class FileUtil():
     
     file_text: str
 

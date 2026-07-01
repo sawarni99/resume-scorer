@@ -12,3 +12,11 @@ pymupdf
 tqdm
 matplotlib
 scikit-learn
+trl
+bitsandbytes
+peft
+evaluate
+unsloth
+mlx-tune
+rouge-score
+ollama
