@@ -1,0 +1,17 @@
+{
+    "total_tests": 10,
+    "rouge": {
+        "rouge1": 0.922360248447205,
+        "rouge2": 0.9170834820325583,
+        "rougeL": 0.917322360720213,
+        "rougeLsum": 0.923232142870857
+    },
+    "exact_match": {
+        "exact_match": 0.5
+    },
+    "valid_json": {
+        "valid_json_count": 10,
+        "valid_json_score": 1.0,
+        "invalid_json_idx": []
+    }
+}
