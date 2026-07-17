@@ -1,15 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from datatypes.resume_data_type import Resume
+from datatypes.jd_data_type import JobDescription
 from utils.utility import Utility
 from typing import List, Dict
-import fitz
 
-
-class ResumeUtil:
+class JobDescriptionUtil:
 
     @staticmethod
-    def plot_resume_data(data, title: str = "", ylabel: str = "", xlabel: str = "") -> None:
+    def plot_jd_data(data, title: str = "", ylabel: str = "", xlabel: str = "") -> None:
         plt.figure(figsize=(7, 5))
 
         plt.hist(data, bins=30, color="steelblue", edgecolor="white")
@@ -31,11 +29,11 @@ class ResumeUtil:
 
 
     @staticmethod
-    def get_inferred_texts_from_resume(resume: Resume, resume_text:str) -> List:
+    def get_inferred_texts_from_jd(jd: JobDescription, jd_text: str) -> List:
         util = Utility()
         inferred_texts = []
-        normalized_text = util.normalize_strings_with_newlines(resume_text).lower()
-        for value, is_date in util.leaf_strings(resume):
+        normalized_text = util.normalize_strings_with_newlines(jd_text).lower()
+        for value, is_date in util.leaf_strings_from_jd(jd):
             if is_date:
                 found = util.date_in_text(value, normalized_text)
             else:
@@ -46,41 +44,43 @@ class ResumeUtil:
         return inferred_texts
     
     @staticmethod
-    def valid(resume_json:str) -> bool:
+    def valid(jd_json:str) -> bool:
         try:
-            Resume.model_validate_json(resume_json)
+            JobDescription.model_validate_json(jd_json)
             return True
         except Exception as e:
             return False
         
     @staticmethod
-    def create(resume_json:str) -> Resume:
+    def create(jd_json:str) -> JobDescription:
         try:
-            resume = Resume.model_validate_json(resume_json)
+            resume = JobDescription.model_validate_json(jd_json)
             return resume
         except Exception as e:
             raise ValueError(f"Invalid resume JSON: {e}")
 
     @staticmethod
-    def format(resume: Resume) -> None:
-        print(resume.model_dump_json(indent=4))
+    def format(jd: JobDescription) -> None:
+        print(jd.model_dump_json(indent=4))
 
     @staticmethod
-    def extract_text(file_path: str) -> str:
-
-        # Extrating data...
-        doc = fitz.open(file_path)
-        result:str = ""
-
-        # Joining all the extracted pages in one text...
-        for page in doc:
-            text = "".join(page.get_text("text"))
-            result += text
-
-        # Sanitizing the data...
-        file_text:str = Utility.remove_special_chars(result)
-
-        return file_text
+    def min_exp_is_number_or_none(jd: JobDescription):
+        min_exp_yrs = jd.min_experience_yrs
+        if not min_exp_yrs:
+            return True
+        try:
+            float(min_exp_yrs)
+            return True
+        except Exception as e:
+            return False
     
-
-    
+    @staticmethod
+    def max_exp_is_number_or_none(jd: JobDescription):
+        max_exp_yrs = jd.max_experience_yrs
+        if not max_exp_yrs:
+            return True
+        try:
+            float(max_exp_yrs)
+            return True
+        except Exception as e:
+            return False

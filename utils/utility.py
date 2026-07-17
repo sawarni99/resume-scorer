@@ -1,6 +1,7 @@
 
 import re
 from datatypes.resume_data_type import Resume
+from datatypes.jd_data_type import JobDescription
 from typing import List
 
 
@@ -16,8 +17,8 @@ class Utility:
         return " ".join(string.split())
     
 
-    def date_in_resume_text(self, date_value: str, normalized_text: str) -> bool:
-        """Check if a start_year/end_year value can be found in the resume text."""
+    def date_in_text(self, date_value: str, normalized_text: str) -> bool:
+        """Check if a start_year/end_year value can be found in the text."""
         
         val = date_value.strip().lower()
 
@@ -72,7 +73,22 @@ class Utility:
                     values.append((v, False))
 
         return values
-    
+
+    def leaf_strings_from_jd(self, jd: JobDescription) -> List[tuple[str, bool]]:
+        """Extract every non-empty string leaf value from a JobDescription. Returns (value, is_date_field) tuples."""
+        values = []
+
+        for v in [jd.job_summary, jd.min_experience_yrs, jd.max_experience_yrs, jd.degree_needed]:
+            if v and v.strip():
+                values.append((v, False))
+
+        for field in [jd.role_description, jd.required_skills, jd.general_skills, jd.soft_skills, jd.certifications_required]:
+            for v in field:
+                if v and v.strip():
+                    values.append((v, False))
+
+        return values
+
     @staticmethod
     def write_to_file(path: str, content: str):
         with open(path, 'w') as f:

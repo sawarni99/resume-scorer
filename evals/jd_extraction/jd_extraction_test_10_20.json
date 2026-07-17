@@ -1,0 +1,23 @@
+{
+    "total_tests": 10,
+    "rouge": {
+        "rouge1": 0.9997885835095136,
+        "rouge2": 0.9993630573248409,
+        "rougeL": 0.9997885835095136,
+        "rougeLsum": 0.9997885835095136
+    },
+    "exact_match": {
+        "exact_match": 0.9
+    },
+    "valid_json": {
+        "valid_json_count": 10,
+        "valid_json_score": 1.0,
+        "invalid_json_idx": []
+    },
+    "valid_exp_yrs": {
+        "number_non_numeric_min_exp": 0,
+        "non_numeric_min_exp_idx": [],
+        "number_non_numeric_max_exp": 0,
+        "non_numeric_max_exp_idx": []
+    }
+}
