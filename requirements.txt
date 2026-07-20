@@ -20,3 +20,4 @@ unsloth
 mlx-tune
 rouge-score
 ollama
+sentence_transformers
