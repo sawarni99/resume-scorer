@@ -4,6 +4,10 @@ An AI tool that scores a resume against a job description for IT / Computer Scie
 
 The pipeline extracts structured data from both a resume PDF and a job description, then produces a weighted match score (out of 100) built from semantic similarity between the two using vector embeddings.
 
+## Architecture
+
+![Resume Scorer architecture](https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer_architecture.png)
+
 ## How it works
 
 1. **Extract text from the resume PDF** — resumes are computer-generated, so text is pulled directly with [PyMuPDF (`fitz`)](https://pymupdf.readthedocs.io/) rather than OCR.
