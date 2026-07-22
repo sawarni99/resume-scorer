@@ -4,6 +4,14 @@ An AI tool that scores a resume against a job description for IT / Computer Scie
 
 The pipeline extracts structured data from both a resume PDF and a job description, then produces a weighted match score (out of 100) built from semantic similarity between the two using vector embeddings.
 
+## Demo
+
+A quick walkthrough of the Streamlit app scoring a resume against a job description:
+
+https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer.mp4
+
+> If the video does not play inline, [download / view it here](https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer.mp4).
+
 ## Architecture
 
 ![Resume Scorer architecture](https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer_architecture.png)
@@ -229,6 +237,12 @@ The [FastAPI](https://fastapi.tiangolo.com/) service ([api/main.py](api/main.py)
 
 The extraction endpoints run the fine-tuned GGUF models through Ollama, pulling them automatically on first use, and retry up to 3 times on invalid JSON.
 
+## Streamlit app
+
+A [Streamlit](https://streamlit.io/) front-end ([streamlit_app.py](streamlit_app.py)) provides a UI over the API: upload a resume PDF, paste a job description, and get a weighted score breakdown with a per-section bar chart and a match verdict (Strong / Moderate / Weak). It also exposes tabs for the parsed resume and job description JSON, and lets you download the full report.
+
+The app talks to the FastAPI service, so that must be running first. See the [Demo](#demo) above for a walkthrough.
+
 ## Getting started
 
 This project uses [`uv`](https://docs.astral.sh/uv/) (Python `>= 3.12`).
@@ -240,11 +254,14 @@ uv sync
 # Make sure Ollama is running locally for the extraction endpoints
 # https://ollama.com/download
 
-# Run the API
+# Run the API (in one terminal)
 uv run uvicorn api.main:app --reload
+
+# Run the Streamlit app (in another terminal)
+uv run streamlit run streamlit_app.py
 ```
 
-Then open the interactive docs at `http://127.0.0.1:8000/docs`.
+Then open the Streamlit app in your browser (it launches at `http://localhost:8501`), or explore the API directly via the interactive docs at `http://127.0.0.1:8000/docs`.
 
 ### Example: score a resume
 
