@@ -2358,6 +2358,15 @@ wheels = [
 ]
 
 [[package]]
+name = "python-multipart"
+version = "0.0.32"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5b/42/55c32bb9b12693c092ad250a0e82edb5b31ddeda6eb772de5f308b3804ad/python_multipart-0.0.32.tar.gz", hash = "sha256:be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e", size = 46881, upload-time = "2026-06-04T16:18:58.647Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e1/04/e8135ebd1ad02c56ec633277529b2602ff99ff634be76cdba5744cf554fd/python_multipart-0.0.32-py3-none-any.whl", hash = "sha256:ff6d3f776f16878c894e52e107296ffc890e913c611b1a4ec6c44e2821fe2e23", size = 30042, upload-time = "2026-06-04T16:18:57.319Z" },
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -2515,6 +2524,7 @@ dependencies = [
     { name = "datasets" },
     { name = "dotenv" },
     { name = "evaluate" },
+    { name = "fastapi" },
     { name = "huggingface-hub" },
     { name = "ipywidgets" },
     { name = "matplotlib" },
@@ -2523,6 +2533,7 @@ dependencies = [
     { name = "peft" },
     { name = "pydantic" },
     { name = "pymupdf" },
+    { name = "python-multipart" },
     { name = "rouge-score" },
     { name = "scikit-learn" },
     { name = "sentence-transformers" },
@@ -2531,6 +2542,7 @@ dependencies = [
     { name = "transformers" },
     { name = "trl" },
     { name = "unsloth" },
+    { name = "uvicorn" },
     { name = "wandb" },
 ]
 
@@ -2540,6 +2552,7 @@ requires-dist = [
     { name = "datasets", specifier = ">=5.0.0" },
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "evaluate", specifier = ">=0.4.6" },
+    { name = "fastapi", specifier = ">=0.138.1" },
     { name = "huggingface-hub", specifier = ">=1.19.0" },
     { name = "ipywidgets", specifier = ">=8.1.8" },
     { name = "matplotlib", specifier = ">=3.11.0" },
@@ -2548,6 +2561,7 @@ requires-dist = [
     { name = "peft", specifier = ">=0.19.1" },
     { name = "pydantic", specifier = ">=2.13.4" },
     { name = "pymupdf", specifier = ">=1.27.2.3" },
+    { name = "python-multipart", specifier = ">=0.0.20" },
     { name = "rouge-score", specifier = ">=0.1.2" },
     { name = "scikit-learn", specifier = ">=1.9.0" },
     { name = "sentence-transformers", specifier = ">=5.6.0" },
@@ -2556,6 +2570,7 @@ requires-dist = [
     { name = "transformers", specifier = ">=5.12.1" },
     { name = "trl", specifier = ">=1.6.0" },
     { name = "unsloth", specifier = ">=2024.8" },
+    { name = "uvicorn", specifier = ">=0.49.0" },
     { name = "wandb", specifier = ">=0.27.2" },
 ]
 

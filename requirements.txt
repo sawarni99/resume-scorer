@@ -21,3 +21,6 @@ mlx-tune
 rouge-score
 ollama
 sentence_transformers
+fastapi
+uvicorn
+python-multipart

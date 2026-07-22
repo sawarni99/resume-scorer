@@ -88,6 +88,7 @@ SCHEMA:
 
 
     # Scoring parameters
+    SCORER_MODEL_NAME = "Qwen/Qwen3-Embedding-0.6B"
     CERTIFICATIONS_PENALTY = 0.85
     PROJECTS_PENTALTY = 0.8
     SKILL_MATCH_THRESHOLD = 0.55
