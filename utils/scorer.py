@@ -173,7 +173,7 @@ class Scorer:
             if end_year == "Present":
                 present_end_count += 1
                 if present_end_count > 1:
-                    raise Exception("experience_score :: More than one experience has end_year as 'Present'")
+                    continue
                 end = current_year
             elif year_pattern.match(end_year):
                 end = int(end_year)
