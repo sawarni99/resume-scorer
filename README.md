@@ -6,7 +6,11 @@ The pipeline extracts structured data from both a resume PDF and a job descripti
 
 ## Demo
 
-A quick walkthrough of the Streamlit app scoring a resume against a job description:
+The Streamlit app scoring a resume against a job description:
+
+![Resume Scorer app](https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer.png)
+
+A quick video walkthrough:
 
 https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer.mp4
 
