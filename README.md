@@ -14,8 +14,6 @@ A quick video walkthrough:
 
 https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer.mp4
 
-> If the video does not play inline, [download / view it here](https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer.mp4).
-
 ## Architecture
 
 ![Resume Scorer architecture](https://github.com/sawarni99/resume-scorer/raw/main/images/resume_scorer_architecture.png)
